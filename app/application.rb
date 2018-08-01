@@ -19,10 +19,11 @@ class Application
       end
 
     elsif req.path.match(/add/)
-      item = req.params
+      item_to_add = req.params["item"]
 
-      if @@items.include?(search_term)
-        resp.write "#{item} is one of our items"
+      if @@items.include? item_to_add
+        @@cart << item_to_add
+        resp.write "We added #{item} to the cart"
       else
         resp.write "We don't have that item"
       end
