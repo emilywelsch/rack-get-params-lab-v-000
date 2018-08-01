@@ -18,7 +18,7 @@ class Application
       end
     elsif req.path.match(/add/)
       item = req.params
- 
+
       if @@items.include?(search_term)
         resp.write "#{item} is one of our items"
       else
