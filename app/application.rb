@@ -23,7 +23,7 @@ class Application
 
       if @@items.include? item_to_add
         @@cart << item_to_add
-        resp.write "We added #{item} to the cart"
+        resp.write "We added #{item_to_add} to the cart"
       else
         resp.write "We don't have that item"
       end
